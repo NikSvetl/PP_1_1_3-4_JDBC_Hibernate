@@ -1,15 +1,14 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.dao.UserDao;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-import jm.task.core.jdbc.util.Util;
+import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.service.UserService;
+import jm.task.core.jdbc.service.UserServiceImpl;
 
-import java.sql.Connection;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
-        UserDao userDao = new UserDaoJDBCImpl();
+        UserService userDao = new UserServiceImpl();
 
         userDao.createUsersTable();
 
@@ -18,9 +17,15 @@ public class Main {
         userDao.saveUser("Name3", "LastName3", (byte) 31);
         userDao.saveUser("Name4", "LastName4", (byte) 38);
 
-        userDao.removeUserById(1);
-        userDao.getAllUsers();
+        userDao.removeUserById(2);
+
+        List<User> users = userDao.getAllUsers();
+        for (User user : users) {
+            System.out.println(user);
+        }
+
         userDao.cleanUsersTable();
+
         userDao.dropUsersTable();
     }
- }
+}
