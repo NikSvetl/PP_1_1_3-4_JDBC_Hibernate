@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         UserService userDao = new UserServiceImpl();
 
-        //userDao.createUsersTable();
+        userDao.createUsersTable();
 
         userDao.saveUser("Name1", "LastName1", (byte) 20);
         userDao.saveUser("Name2", "LastName2", (byte) 25);
