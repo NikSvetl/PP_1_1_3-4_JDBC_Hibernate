@@ -8,11 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    Connection connection = Util.getConnection();
-
-    public UserDaoJDBCImpl() {
-
-    }
+    private final Connection connection = Util.getConnection();
 
     public void createUsersTable() {
         String sql = "CREATE TABLE IF NOT EXISTS user " +
