@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 import jm.task.core.jdbc.model.User;
-import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -16,7 +15,7 @@ import org.hibernate.service.ServiceRegistry;
 public class Util {
     // реализуйте настройку соеденения с БД
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "1234";
+    private static final String PASSWORD = "root";
     private static final String URL = "jdbc:mysql://localhost:3306/users";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
